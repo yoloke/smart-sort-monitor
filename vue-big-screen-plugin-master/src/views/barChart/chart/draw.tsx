@@ -36,12 +36,13 @@ export default defineComponent({
 
     const textColor = "#fff";
     const lineColor = "rgba(90, 90, 137, 0.7)";
-    let yData =reactive([])
+    let yData = reactive([]);
     // 定义定时器，每隔一段时间执行一次
+
     setInterval(() => {
       yData = Array.from({ length: 7 }, () => Math.floor(Math.random() * 1000));
       options.series[0].data = yData;
-    }, 1000);
+    }, 2000);
 
     let colors = [
       {
