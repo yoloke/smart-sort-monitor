@@ -68,12 +68,34 @@
         grid-gap: 16px;
         margin-bottom: 16px;
         height: 567px;
-        .column2 {
-        }
         .column1 {
           display: grid;
           grid-template-rows: 1fr 3fr;
           grid-gap: 6px;
+          .content {
+            height: 73%;
+            img {
+              width: 64px;
+            }
+            .content-item-data {
+              margin-left: 20px;
+              .data-title {
+                font-size: 18px;
+                font-weight: 400;
+
+                line-height: 27.21px;
+                color: rgba(255, 255, 255, 1);
+              }
+              .data {
+                font-size: 30px;
+                font-weight: 600;
+                line-height: 40px;
+                color: rgba(255, 255, 255, 1);
+              }
+            }
+          }
+        }
+        .column2 {
         }
       }
       // 底部数据

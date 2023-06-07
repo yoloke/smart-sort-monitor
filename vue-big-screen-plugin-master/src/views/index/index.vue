@@ -7,16 +7,37 @@
         <div class="title d-flex jc-between ai-center">
           <span class="title-logo"></span>
           <span class="title-text d-flex ai-center">传感器自动分选机</span>
-          <span class="title-time">
-            20230531a
-          </span>
+          <span class="title-time">20230531a</span>
         </div>
 
         <div class="body-box">
           <div class="center-box">
             <div class="column1">
-              <div class="box-item">
+              <div class="box-item header">
                 <Title></Title>
+                <div class="content d-flex ai-center jc-around">
+                  <div class="content-item d-flex">
+                    <img src="@/assets/img/icon.webp" alt="" />
+                    <div class="content-item-data">
+                      <div class="data-title">入料计数</div>
+                      <div class="data">9999999</div>
+                    </div>
+                  </div>
+                  <div class="content-item d-flex">
+                    <img src="@/assets/img/icon.webp" alt="" />
+                    <div class="content-item-data">
+                      <div class="data-title">良品计数</div>
+                      <div class="data">9999999</div>
+                    </div>
+                  </div>
+                  <div class="content-item d-flex">
+                    <img src="@/assets/img/icon.webp" alt="" />
+                    <div class="content-item-data">
+                      <div class="data-title">不良计数</div>
+                      <div class="data">9999999</div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="box-item">
                 <Title></Title>
