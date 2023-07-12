@@ -4,17 +4,25 @@
       <dv-loading v-if="loading">加载中</dv-loading>
 
       <div v-else class="host-body">
-        <div class="title d-flex jc-between ai-center">
+        <div class="title d-flex jc-between ai-end">
           <span class="title-logo"></span>
           <span class="title-text d-flex ai-center">传感器自动分选机</span>
-          <span class="title-time">20230531a</span>
+
+          <span class="title-time">
+            <a-switch v-model:checked="checked3">
+              <template #checkedChildren><span class="iconfont">&#xe648;</span></template>
+              <template #unCheckedChildren><span class="iconfont">&#xe648;</span></template>
+            </a-switch>
+            版本号：20230531a
+          </span>
         </div>
 
         <div class="body-box">
+          <!--  -->
           <div class="center-box">
             <div class="column1">
               <div class="box-item header">
-                <Title></Title>
+                <Title title="计数数据"></Title>
                 <div class="content d-flex ai-center jc-around">
                   <div class="content-item d-flex">
                     <img src="@/assets/img/icon.webp" alt="" />
@@ -40,39 +48,58 @@
                 </div>
               </div>
               <div class="box-item">
-                <Title></Title>
+                <Title title="运行数据"></Title>
                 <LineChart></LineChart>
               </div>
             </div>
             <div class="column2 box-item">
-              <Title></Title>
+              <Title title="产品数据"></Title>
               <BarChart></BarChart>
             </div>
           </div>
+          <!--  -->
           <div class="bottom-box">
             <div class="box-item">
-              <Title></Title>
-              <chart :tips="rate[0].tips" :colorObj="rate[0].colorData" />
+              <Title title="管1"></Title>
+              <chart
+                title="管1"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
             </div>
             <div class="box-item">
-              <Title></Title>
-              <chart :tips="rate[1].tips" :colorObj="rate[1].colorData" />
+              <Title title="管2"></Title>
+              <chart
+                title="管2"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
             </div>
             <div class="box-item">
-              <Title></Title>
-              <chart :tips="rate[2].tips" :colorObj="rate[2].colorData" />
+              <Title title="管3"></Title>
+              <chart
+                title="管3"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
             </div>
             <div class="box-item">
-              <Title></Title>
-              <chart :tips="rate[3].tips" :colorObj="rate[3].colorData" />
+              <Title title="管4"></Title>
+              <chart
+                title="管4"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
             </div>
             <div class="box-item">
-              <Title></Title>
-              <chart :tips="rate[0].tips" :colorObj="rate[0].colorData" />
+              <Title title="管5"></Title>
+              <chart
+                title="管5"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
             </div>
             <div class="box-item">
-              <Title></Title>
-              <chart :tips="rate[0].tips" :colorObj="rate[0].colorData" />
+              <Title title="管6"></Title>
+              <chart
+                title="管6"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
             </div>
           </div>
         </div>
@@ -82,6 +109,8 @@
 </template>
 
 <script lang="ts" setup>
+import { CheckOutlined, CloseOutlined } from "@ant-design/icons-vue";
+const checked3 = ref(true);
 import Chart from "../center/chart/draw";
 import { ref, reactive, onMounted, onUnmounted } from "vue";
 import { formatTime } from "@/utils/index";

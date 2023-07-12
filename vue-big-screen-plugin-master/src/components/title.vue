@@ -1,12 +1,18 @@
 <template>
   <div class="title-container">
     <img src="@/assets/img/title-icon.webp" alt="" />
-    <span class="title">运行数据</span>
+    <span class="title">{{title}}</span>
   </div>
 </template>
 
-<script>
-export default {};
+<script lang="ts" setup>
+  const props = defineProps({
+    // 可以设置传来值的类型和默认值
+    title: {
+        type:String,
+        default: '运行数据'
+    }
+  })
 </script>
 
 <style lang="scss" scoped>
@@ -24,6 +30,7 @@ export default {};
     margin-left: 10px;
     font-size: 22px;
     color: rgba(255, 255, 255, 1);
+    
   }
 }
 </style>

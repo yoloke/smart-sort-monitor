@@ -66,11 +66,11 @@ export default defineComponent({
         top: "5%",
         right: "5%",
         itemWidth: 20,
-        itemHeight: 5,
+        itemHeight: 3,
         icon: "horizontal",
         textStyle: {
           color: "#ffffff",
-          fontSize: 20,
+          fontSize: 14,
         },
         data: ["良品结果", "不良品结果"],
       },
