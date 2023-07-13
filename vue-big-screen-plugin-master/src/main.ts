@@ -10,13 +10,13 @@ import './assets/icon/iconfont.css'
 // 引入 全局注册组件
 import PublicComponent from '@/components/componentInstall';
 
-import { Switch } from "ant-design-vue";
-
+import Antd from "ant-design-vue";
+import "ant-design-vue/dist/antd.css";
 
 const app = createApp(App)
 app.use(PublicComponent)
 app.use(dataV)
 app.use(store)
 app.use(router)
-app.use(Switch);
+app.use(Antd);
 app.mount('#app')

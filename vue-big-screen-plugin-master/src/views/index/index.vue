@@ -3,18 +3,18 @@
     <div class="bg">
       <dv-loading v-if="loading">加载中</dv-loading>
 
-      <div v-else class="host-body">
+      <!-- 展示页面 -->
+      <div v-else class="show-body">
         <div class="title d-flex jc-between ai-end">
           <span class="title-logo"></span>
           <span class="title-text d-flex ai-center">传感器自动分选机</span>
 
-          <span class="title-time">
-            <a-switch v-model:checked="checked3">
-              <template #checkedChildren><span class="iconfont">&#xe648;</span></template>
-              <template #unCheckedChildren><span class="iconfont">&#xe648;</span></template>
-            </a-switch>
-            版本号：20230531a
-          </span>
+          <div>
+            <span class="title-time">版本号：20230531a</span>
+            <router-link to="/setting">
+              <span class="iconfont setting">&#xe648;</span>
+            </router-link>
+          </div>
         </div>
 
         <div class="body-box">
@@ -89,6 +89,7 @@
             </div>
             <div class="box-item">
               <Title title="管5"></Title>
+             
               <chart
                 title="管5"
                 :tips="rate[0].tips"
@@ -229,7 +230,7 @@ const { appRef, calcRate, windowDraw, unWindowDraw } = useDraw();
 // 生命周期
 onMounted(() => {
   cancelLoading();
-  handleTime();
+
   // todo 屏幕适应
   windowDraw();
   calcRate();
@@ -246,16 +247,6 @@ const cancelLoading = () => {
   setTimeout(() => {
     loading.value = false;
   }, 500);
-};
-
-// todo 处理时间监听
-const handleTime = () => {
-  timeInfo.setInterval = setInterval(() => {
-    const date = new Date();
-    timeInfo.dateDay = formatTime(date, "HH: mm: ss");
-    timeInfo.dateYear = formatTime(date, "yyyy-MM-dd");
-    timeInfo.dateWeek = WEEK[date.getDay()];
-  }, 1000);
 };
 </script>
 

@@ -6,18 +6,25 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6941232",
+      "name": "竖线",
+      "font_class": "shuxian",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "687392",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e6ff",
+      "unicode_decimal": 59135
+    },
+    {
       "icon_id": "21967226",
       "name": "设置",
       "font_class": "shezhi",
       "unicode": "e648",
       "unicode_decimal": 58952
-    },
-    {
-      "icon_id": "34201291",
-      "name": "警报",
-      "font_class": "alert",
-      "unicode": "e859",
-      "unicode_decimal": 59481
     }
   ]
 }

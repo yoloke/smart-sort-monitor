@@ -7,16 +7,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transform-origin: left top;
+
   .bg {
     width: 100%;
     height: 100%;
     padding: 0 16px 0 16px;
   }
 
-  .host-body {
+  .show-body {
     .title {
       height: 42px;
-      margin:  30px 0;
+      margin: 30px 0;
       .title-logo {
         width: 320px;
         height: 42px;
@@ -46,9 +47,16 @@
         text-align: right; /* 将文本内容右对齐 */
         color: rgba(255, 255, 255, 0.5);
         width: 320px;
-        margin-right: 4px;
+        margin-right: 20px;
       }
+      .iconfont.setting {
+        font-size: 30px;
+        transition: transform 0.3s ease;
 
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
 
     .body-box {
@@ -98,14 +106,13 @@
         grid-template-columns: repeat(6, 1fr);
         grid-gap: 12px;
         height: 400px;
-        
       }
     }
   }
-}
-.box-item {
-  border-radius: 8px;
-  background: rgba(10, 16, 20, 0.6);
-  // backdrop-filter: blur(20px);
-  overflow: hidden;
+  .box-item {
+    border-radius: 8px;
+    background: rgba(10, 16, 20, 0.6);
+    // backdrop-filter: blur(20px);
+    overflow: hidden;
+  }
 }
