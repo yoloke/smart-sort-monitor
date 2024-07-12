@@ -1,0 +1,258 @@
+<template>
+  <div id="index" ref="appRef">
+    <div class="bg">
+      <dv-loading v-if="loading">加载中</dv-loading>
+
+      <!-- 展示页面 -->
+      <div v-else class="show-body">
+        <div class="title d-flex jc-between ai-end">
+          <span class="title-logo"></span>
+          <span class="title-text d-flex ai-center">传感器自动分选机</span>
+
+          <div>
+            <span class="title-time">版本号：20230717a</span>
+            <router-link to="/setting">
+              <span class="iconfont setting">&#xe648;</span>
+            </router-link>
+          </div>
+        </div>
+
+        <div class="body-box">
+          <!--  -->
+          <div class="center-box">
+            <div class="column1">
+              <div class="box-item header">
+                <Title title="计数数据" bg="/title/2.webp"></Title>
+
+                <div class="content d-flex ai-center jc-around">
+                  <div class="content-item d-flex">
+                    <img src="@/assets/img/icon.webp" alt="" />
+                   
+
+                    <div class="content-item-data">
+                      <div class="data-title">入料计数</div>
+                      <div class="data">9999999</div>
+                    </div>
+                  </div>
+                  <div class="content-item d-flex">
+                    <img src="@/assets/img/icon.webp" alt="" />
+                    <div class="content-item-data">
+                      <div class="data-title">良品计数</div>
+                      <div class="data">9999999</div>
+                    </div>
+                  </div>
+                  <div class="content-item d-flex">
+                    <img src="@/assets/img/icon.webp" alt="" />
+                    <div class="content-item-data">
+                      <div class="data-title">不良计数</div>
+                      <div class="data">9999999</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box-item">
+                <Title title="运行数据" bg="/title/2.webp"></Title>
+                <LineChart></LineChart>
+              </div>
+            </div>
+            <div class="column2 box-item">
+              <Title title="产品数据" bg="/title/1.webp"></Title>
+              <BarChart></BarChart>
+            </div>
+          </div>
+          <!--  -->
+          <div class="bottom-box">
+            <div class="box-item">
+              <Title title="管1"></Title>
+              <chart
+                title="管1"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
+            </div>
+            <div class="box-item">
+              <Title title="管2"></Title>
+              <chart
+                title="管2"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
+            </div>
+            <div class="box-item">
+              <Title title="管3"></Title>
+              <chart
+                title="管3"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
+            </div>
+            <div class="box-item">
+              <Title title="管4"></Title>
+              <chart
+                title="管4"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
+            </div>
+            <div class="box-item">
+              <Title title="管5"></Title>
+
+              <chart
+                title="管5"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
+            </div>
+            <div class="box-item">
+              <Title title="管6"></Title>
+              <chart
+                title="管6"
+                :tips="rate[0].tips"
+                :colorObj="rate[0].colorData" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { CheckOutlined, CloseOutlined } from "@ant-design/icons-vue";
+const checked3 = ref(true);
+import Chart from "../center/chart/draw";
+import { ref, reactive, onMounted, onUnmounted } from "vue";
+import { formatTime } from "@/utils/index";
+import { WEEK } from "@/constant/index";
+import useDraw from "@/utils/useDraw";
+import { title, subtitle, moduleInfo } from "@/constant/index";
+import CenterLeft1 from "../centerLeft1/index.vue";
+import LineChart from "@/views/lineChart/index.vue";
+import BarChart from "@/views/barChart/index.vue";
+import CenterLeft2 from "../centerLeft2/index.vue";
+import Center from "../center/index.vue";
+import CenterRight1 from "../centerRight1/index.vue";
+import CenterRight2 from "../centerRight2/index.vue";
+import BottomLeft from "../bottomLeft/index.vue";
+import BottomRight from "../bottomRight/index.vue";
+import Title from "@/components/title.vue";
+const rate = reactive([
+  {
+    id: "Pipeline1",
+    tips: 60,
+    colorData: {
+      textStyle: "#3fc0fb",
+      series: {
+        color: ["#00bcd44a", "transparent"],
+        dataColor: {
+          normal: "#03a9f4",
+          shadowColor: "#97e2f5",
+        },
+      },
+    },
+  },
+  {
+    id: "Pipeline2",
+    tips: 70,
+    colorData: {
+      textStyle: "#67e0e3",
+      series: {
+        color: ["#faf3a378", "transparent"],
+        dataColor: {
+          normal: "#ff9800",
+          shadowColor: "#fcebad",
+        },
+      },
+    },
+  },
+  {
+    id: "Pipeline3",
+    tips: 40,
+    colorData: {
+      textStyle: "#67e0e3",
+      series: {
+        color: ["#faf3a378", "transparent"],
+        dataColor: {
+          normal: "#ff9800",
+          shadowColor: "#fcebad",
+        },
+      },
+    },
+  },
+  {
+    id: "Pipeline4",
+    tips: 40,
+    colorData: {
+      textStyle: "#67e0e3",
+      series: {
+        color: ["#faf3a378", "transparent"],
+        dataColor: {
+          normal: "#ff9800",
+          shadowColor: "#fcebad",
+        },
+      },
+    },
+  },
+  {
+    id: "Pipeline5",
+    tips: 40,
+    colorData: {
+      textStyle: "#67e0e3",
+      series: {
+        color: ["#faf3a378", "transparent"],
+        dataColor: {
+          normal: "#ff9800",
+          shadowColor: "#fcebad",
+        },
+      },
+    },
+  },
+  {
+    id: "Pipeline6",
+    tips: 40,
+    colorData: {
+      textStyle: "#67e0e3",
+      series: {
+        color: ["#faf3a378", "transparent"],
+        dataColor: {
+          normal: "#ff9800",
+          shadowColor: "#fcebad",
+        },
+      },
+    },
+  },
+]);
+// * 颜色
+const decorationColors = ["#568aea", "#000000"];
+// * 加载标识
+const loading = ref<boolean>(true);
+// * 时间内容
+const timeInfo = reactive({
+  setInterval: 0,
+  dateDay: "",
+  dateYear: "",
+  dateWeek: "",
+});
+// * 适配处理
+const { appRef, calcRate, windowDraw, unWindowDraw } = useDraw();
+// 生命周期
+onMounted(() => {
+  cancelLoading();
+
+  // todo 屏幕适应
+  windowDraw();
+  calcRate();
+});
+
+onUnmounted(() => {
+  unWindowDraw();
+  clearInterval(timeInfo.setInterval);
+});
+
+// methods
+// todo 处理 loading 展示
+const cancelLoading = () => {
+  setTimeout(() => {
+    loading.value = false;
+  }, 500);
+};
+</script>
+
+<style lang="scss" scoped>
+@import "@/assets/scss/index.scss";
+</style>

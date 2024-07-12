@@ -1,0 +1,23 @@
+{
+  "id": "4164136",
+  "name": "分选机",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "21967226",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "34201291",
+      "name": "警报",
+      "font_class": "alert",
+      "unicode": "e859",
+      "unicode_decimal": 59481
+    }
+  ]
+}

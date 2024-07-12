@@ -1,0 +1,95 @@
+#index {
+  color: #d3d6dd;
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: left top;
+  .bg {
+    width: 100%;
+    height: 100%;
+    padding: 0 16px 0 16px;
+  }
+
+  .host-body {
+    .title {
+      height: 85px;
+      .title-logo {
+        width: 320px;
+        height: 42px;
+        background-image: url("../../assets/logo.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .title-text {
+        height: 100%;
+        font-family: "MyFont";
+        font-size: 34.28px;
+        font-weight: 800;
+        letter-spacing: 1.03px;
+        background-image: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 1) 37.41%,
+          rgba(180, 207, 242, 1) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .title-time {
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-align: right; /* 将文本内容右对齐 */
+        color: rgba(255, 255, 255, 0.5);
+        width: 320px;
+        margin-right: 4px;
+      }
+
+      .dv-dec-6 {
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        width: 250px;
+        height: 8px;
+        transform: translate(-50%);
+      }
+    }
+
+    .body-box {
+      display: flex;
+      flex-direction: column;
+
+      .center-box {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-gap: 16px;
+        margin-bottom: 16px;
+        height: 567px;
+        .column2 {
+        }
+        .column1 {
+          display: grid;
+          grid-template-rows: 1fr 3fr;
+          grid-gap: 6px;
+        }
+      }
+      // 底部数据
+      .bottom-box {
+        display: grid;
+        // 创建六个等宽的网格列，每个列的宽度都是网格容器剩余空间的均等份额。
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 16px;
+        height: 400px;
+      }
+    }
+  }
+}
+.box-item {
+  border-radius: 8px;
+  background: rgba(10, 16, 20, 0.6);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}

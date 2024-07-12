@@ -1,0 +1,30 @@
+{
+  "id": "4164136",
+  "name": "分选机",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6941232",
+      "name": "竖线",
+      "font_class": "shuxian",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "687392",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e6ff",
+      "unicode_decimal": 59135
+    },
+    {
+      "icon_id": "21967226",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    }
+  ]
+}
